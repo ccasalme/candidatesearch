@@ -12,6 +12,14 @@ The **Candidate Search App** is a web application that allows recruiters to sear
 ✔ **Persistent Storage:** Saved candidates remain even after page refresh.  
 ✔ **Error Handling:** Displays appropriate messages when no candidates are found or available.  
 
+## Example
+
+
+
+https://github.com/user-attachments/assets/9de8e0bc-76e0-42c1-bf88-04260d71b085
+
+
+
 ## Table of Contents
 - [Installation](#installation)
 - [Usage](#usage)
