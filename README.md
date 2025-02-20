@@ -1,33 +1,94 @@
-# React + TypeScript + Vite
+# Candidate Search App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Description
+The **Candidate Search App** is a web application that allows recruiters to search for potential candidates using the GitHub API. Users can browse through candidates, save promising profiles, and manage a list of saved candidates. The app is built with React, TypeScript, and uses local storage to persist saved candidates.
 
-Currently, two official plugins are available:
+## Features
+✔ **Candidate Browsing:** View a random GitHub user's details upon page load.  
+✔ **Candidate Search:** Enter a GitHub username to fetch specific user data.  
+✔ **Save Candidates:** Click the `+` button to add a candidate to the saved list.  
+✔ **Skip Candidates:** Click the `-` button to skip a candidate without saving.  
+✔ **Saved Candidates Page:** View and manage saved candidates.  
+✔ **Persistent Storage:** Saved candidates remain even after page refresh.  
+✔ **Error Handling:** Displays appropriate messages when no candidates are found or available.  
 
-* [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md), which uses [Babel](https://babeljs.io/) for Fast Refresh
-* [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc), which uses [SWC](https://swc.rs/) for Fast Refresh
+## Table of Contents
+- [Installation](#installation)
+- [Usage](#usage)
+- [API Endpoints](#api-endpoints)
+- [Contributing](#contributing)
+- [Tests](#tests)
+- [License](#license)
 
-## Expanding the ESLint configuration
+## Installation
+To run this project locally, ensure you have **Node.js** installed.
 
-If you're developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+### Steps to Install:
+1. **Clone the Repository**
+   ```sh
+   git clone https://github.com/your-username/candidate-search-app.git
+   cd candidate-search-app
+   ```
+2. **Install Dependencies**
+   ```sh
+   npm install
+   ```
+3. **Set Up Your Environment Variables**
+   - Create a `.env` file in the root directory.
+   - Add your GitHub **Personal Access Token**:
+     ```sh
+     VITE_GITHUB_TOKEN=your_personal_access_token_here
+     ```
+   - Ensure `.env` is added to `.gitignore` to prevent accidental exposure.
+4. **Start the Development Server**
+   ```sh
+   npm run dev
+   ```
 
-* Configure the top-level `parserOptions` property as follows:
+## Usage
+1. **Search for Candidates**
+   - The homepage loads a random GitHub user.
+   - Use the search bar to enter a GitHub username and fetch their details.
+2. **Save or Skip Candidates**
+   - Click `+` to save a candidate.
+   - Click `-` to skip a candidate.
+3. **View Saved Candidates**
+   - Navigate to the "Potential Candidates" page to see saved profiles.
+   - Remove candidates using the `➖` button.
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+## API Endpoints
+The app uses the following GitHub API endpoints:
 
-* Replace `plugin:@typescript-eslint/recommended` with `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`.
-* Optionally, add `plugin:@typescript-eslint/stylistic-type-checked`.
-* Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` and `plugin:react/jsx-runtime` to the `extends` list.
+| Method | Endpoint                        | Description                              |
+|--------|--------------------------------|----------------------------------|
+| GET    | `https://api.github.com/users?since=randomID` | Fetches random GitHub users. |
+| GET    | `https://api.github.com/users/{username}` | Fetches a specific user by username. |
 
----
-© 2024 edX Boot Camps LLC. Confidential and Proprietary. All Rights Reserved.
+## Contributing
+We welcome contributions! Follow these steps:
+1. **Fork the repository**
+2. **Create a feature branch**
+   ```sh
+   git checkout -b new-feature
+   ```
+3. **Commit changes**
+   ```sh
+   git commit -m "Added new feature"
+   ```
+4. **Push to the branch**
+   ```sh
+   git push origin new-feature
+   ```
+5. **Submit a Pull Request**
+
+## Tests
+You can test the application by:
+- Running the app and searching for GitHub users.
+- Checking that candidates are saved to local storage.
+- Verifying that skipped candidates do not persist.
+
+## License
+📜 This project is licensed under the **MIT License**. See the `LICENSE` file for details.
+
+🚀 Ready to find top candidates? Start your search now! 🔥
+
